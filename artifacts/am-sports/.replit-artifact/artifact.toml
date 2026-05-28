@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "AM Sports - Lista de Uniformes"
+version = "1.0.0"
+id = "artifacts/am-sports"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23794
+
+[services.development]
+run = "pnpm --filter @workspace/am-sports run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/am-sports", "run", "build" ]
+publicDir = "artifacts/am-sports/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23794"
+BASE_PATH = "/"
