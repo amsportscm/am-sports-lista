@@ -17,7 +17,7 @@ type ExportInfo = {
   cliente: string;
 };
 
-const ADULT_SIZES = ['PP', 'P', 'M', 'G', 'GG', 'XG', 'XXG'];
+const ADULT_SIZES = ['PP', 'P', 'M', 'G', 'GG', 'XG', 'XXG', 'XXXG'];
 const KIDS_SIZES = ['INF 2', 'INF 4', 'INF 6', 'INF 8', 'INF 10', 'INF 12', 'INF 14'];
 const BABY_SIZES = ['BABY PP', 'BABY P', 'BABY M', 'BABY G', 'BABY GG', 'BABY XG', 'BABY XXG'];
 const ORDERED_SIZES = [...ADULT_SIZES, ...KIDS_SIZES, ...BABY_SIZES];
@@ -325,7 +325,7 @@ export default function App() {
                   className="w-full border-dashed border-2 hover:bg-muted/50"
                 >
                   <Plus className="w-4 h-4 mr-2" />
-                  Adicionar Linha
+                  Adicione mais áreas
                 </Button>
                 <Button
                   onClick={clearList}
@@ -339,6 +339,9 @@ export default function App() {
 
             <p className="text-center text-xs text-muted-foreground mt-4 font-medium">
               Clique no campo de tamanho para abrir as opções.
+            </p>
+            <p className="text-center text-xs text-muted-foreground/50 mt-1 font-medium">
+              Desenvolvido por @richardsoonofc | Company 2026
             </p>
           </>
         ) : (
